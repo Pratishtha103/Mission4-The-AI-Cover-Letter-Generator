@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Cover Letter Generator</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            background-color:rgb(242, 242, 242);
+        }
+        nav{
+            position: sticky;
+            top:0;
+            text-align: center;
+            padding: 1em;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(1em);          
+            -webkit-backdrop-filter: blur(10px);   
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            color: #555;
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        nav h1{
+            background: none;
+        }
+        .tagline{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2em;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }     
+        .tagline h3{
+            text-align: center;
+            color:rgb(84, 100, 168);
+            font-size:2.8em;
+            font-weight: 400;
+        } 
+        .tagline p{
+            text-align: center;
+            color:rgb(58, 148, 205);
+            font-size:1.4em;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }   
+        form{
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding:2em 2em;
+            gap:1em;
+            margin:2em;
+            /* height:20em; */
+        }
+        .form-field{
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        form label{
+            background: none;
+            font-size: 1.6em;
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            color:rgb(84, 100, 168);
+        }
+        input{
+            text-align: center;
+            width:26em;
+            height: 3em;
+            border: none;
+            border-radius:4px;
+            background-color:rgb(235, 235, 235);
+        }
+        .generate-button{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: white;
+        }
+        .generate{
+            border: 2px solid rgb(84, 100, 168);
+            width:10em;
+            padding: 1em;
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-size: 1em;
+            color:rgb(105, 121, 193);
+            font-weight: bold;
+            border-radius: 0.4em;
+            background-color: white;
+        }
+        .generate:hover{
+            background-color: rgb(74, 90, 164);
+            color: white;
+        }
+        .cover-letter{
+            display: none;
+            position: relative;
+            align-items: center;
+            justify-content: center;
+            background-color: white;
+            margin:2em;
+            height:200px;
+        }
+        .copy-to-clipboard{
+            position: absolute;
+            padding: 0.6em;
+            border: none;
+            background-color: white;
+            right: 0.4em;
+            top:0.4em;
+        }
+        .copy-to-clipboard:hover{
+            background-color: #ededed;
+            border-radius: 50%;
+
+        }
+        .copy-to-clipboard img{
+            width:24px;
+            cursor: pointer;
+        }
+        footer{
+            margin-top:2em;
+            height: 4em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #727272;
+        }
+        footer p{
+            text-align: center;
+            background: none;
+            color:white;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <h1>AI Cover Letter Generator</h1>
+    </nav>
+    <div class="tagline">
+        <h3>Get a professional cover letter, personalized just for you.</h3>
+        <br/>
+        <p>Enter the details below and let AI do the job.</p>
+    </div>
+    <form onsubmit="coverLetter(event);">
+        <div class="form-field">
+            <label for="name">Candidate Name: </label>
+            <input type="text" placeholder="Enter your full name" id="name" required/>
+        </div>
+        <div class="form-field">
+            <label for="job-role">Job Role: </label>
+            <input type="text" placeholder="Enter the job role" id="job-role" required/>
+        </div>
+        <div class="form-field">
+            <label for="company-name">Company Name:</label>
+            <input type="text" placeholder="Enter the company name" id="company-name" required/>
+        </div>
+        <div class="form-field">
+            <label for="skills">Key Skills: </label>
+            <input type="text" placeholder="Enter your key skills" id="skills" required/>
+        </div>
+        <div class="generate-button">
+            <button type="submit" class="generate">Generate</button>
+        </div>
+    </form>
+    <div class="cover-letter">
+        <button class="copy-to-clipboard" onclick="copyText(this)"><img src="copy.png" alt="copy-to-clipboard"></button>
+        <div id="cover-letter-text">
+            Your generated cover letter text goes here...
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2026</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
