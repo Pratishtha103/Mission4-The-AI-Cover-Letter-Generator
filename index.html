@@ -98,14 +98,17 @@
             background-color: rgb(74, 90, 164);
             color: white;
         }
-        .cover-letter{
+        #cover-letter{
             display: none;
             position: relative;
             align-items: center;
             justify-content: center;
             background-color: white;
             margin:2em;
-            height:200px;
+            padding: 1em;
+        }
+        #cover-letter-text{
+            background-color: white;
         }
         .copy-to-clipboard{
             position: absolute;
@@ -163,17 +166,16 @@
         </div>
         <div class="form-field">
             <label for="skills">Key Skills: </label>
-            <input type="text" placeholder="Enter your key skills" id="skills" required/>
+            <input type="text" placeholder="Enter the key skills" id="skills" required/>
         </div>
         <div class="generate-button">
-            <button type="submit" class="generate">Generate</button>
+            <button type="submit" class="generate" id="generate-btn">Generate</button>
         </div>
     </form>
-    <div class="cover-letter">
+    <div id="cover-letter">
         <button class="copy-to-clipboard" onclick="copyText(this)"><img src="copy.png" alt="copy-to-clipboard"></button>
-        <div id="cover-letter-text">
-            Your generated cover letter text goes here...
-        </div>
+        <p id="cover-letter-text">
+        </p>
     </div>
     <footer>
         <p>&copy; 2026</p>

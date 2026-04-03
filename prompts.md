@@ -19,4 +19,12 @@
             top:0;
         }"
 
-"how can i click on this copy to clipboard to show copied"
+"how can i click on copy to clipboard to show copied"
+
+"script.js:30 
+ POST https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key= 404 (Not Found)
+coverLetter	@	script.js:30
+onsubmit	@	level2.html:151
+why does this error signify"
+
+"how can i use .env content in javascript file"
